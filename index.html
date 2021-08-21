@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <title>Progress Bar</title>
+</head>
+<body id="body">
+    <div class="container">
+        <h3>Goal $500</h3>
+        <div class="progress-bar">
+            <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+        <div id="pledge-container" class="btn-container">
+            <button class="pledge-btn">Pledge $1</button>
+            <button class="pledge-btn">Pledge $10</button>
+            <button class="pledge-btn">Pledge $25</button>
+            <button class="pledge-btn">Pledge $100</button>
+            <form action="submit">
+                <label for="custom-amount">
+                    <input id="custom-amount" type="text" placeholder="custom amount">
+                    <button>Pledge!</button>
+                </label>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
