@@ -28,7 +28,7 @@ button:hover {
 }
 
 .pledge-btn.active {
-  border: 6px solid red;
+  color: red;
 }
 
 button:focus {
@@ -50,13 +50,16 @@ button:focus {
   border: 1px solid #999;
   border-radius: 2rem;
   overflow: hidden;
+  z-index: 3;
 }
 
 .progress-bar-fill {
   background-color: mediumspringgreen;
-  width: 200px;
-  height: 100%;
-  border-radius: 2rem;
+  width: 1%;
+  height: 30px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  z-index: 1;
 }
 
 .btn-container {
