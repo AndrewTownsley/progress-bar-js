@@ -7,28 +7,24 @@ const selectPledgeAmount = (e) => {
     if(e.target !== e.currentTarget) {
         const currentPledge = document.querySelector('.pledge-btn');
         if(currentPledge) {
+            const currentBtn = e.target;
             const progressFill = document.getElementById('progress-fill');
-            let pledgeValue = parseFloat(e.target.dataset.value);
-            progressFill.style.width = parseFloat(pledgeTotal);
+            let pledgeValue = parseInt(e.target.dataset.value);
+            progressFill.style.width = parseInt(pledgeTotal);
             let newWidth = pledgeTotal += pledgeValue;
-            progressFill.style.width = newWidth + "px";       
-            console.log(newWidth); 
-        }
-        e.stopPropagation();
-    }
-}
-const updateProgressBar = () => {
-    console.log("progress bar");         
-    if(e.target !== e.currentTarget) {
-        const currentPledge = document.querySelector('.pledge-btn');
-        if(currentPledge) {
-            const progressFill = document.getElementById('progress-fill');
-            progressFill.style.width = pledgeTotal;
-            let newWidth = Number(e.target.dataset.value += pledgeTotal);
-            progressFill.style.width = (newWidth) + "px";
+            progressFill.style.width = newWidth + "px";   
+            currentBtn.classList.toggle('active');    
+            //-------------pledge count & backer count -----------------------
+            // let pledgeCount = document.getElementById('pledgeCount');
+            let backersCountDisplay = document.getElementById('backersCount');
+            let backersCount = 0;
+            let backersTotal = parseInt(backersCount) + 1;
+            backersTotal++;
+            backersCountDisplay.innerText = backersTotal; 
+
         }
         e.stopPropagation();
     }
 }
 
-window.addEventListener('click', selectPledgeAmount, updateProgressBar, false)
+window.addEventListener('click', selectPledgeAmount, false)
