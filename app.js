@@ -1,8 +1,17 @@
 const progressFill = document.getElementById('progress-fill');
 const btnContainer = document.querySelector('.btn-container');
 const body = document.querySelector('body');
+const pledgeBtns = document.querySelectorAll('.btn-container .pledge-btn');
+const pledgeAmounts = {
+    option1: 1,
+    option2: 10,
+    option3: 25,
+    option4: 100,
+}
+console.log(pledgeAmounts.option2);
 let pledgeTotal = 0;
 let backersCount = 345;
+let pledgeCounter = parseInt(0);
 
 
 const selectPledgeAmount = (e) => {
@@ -20,10 +29,22 @@ const selectPledgeAmount = (e) => {
             let backersCountDisplay = document.getElementById('backersCount');
             backersCount++;
             backersCountDisplay.innerText = backersCount; 
-            console.log(backersCount);
         }
         e.stopPropagation();
     }
 }
+
+const updatePledgeTotal = (e) => {
+    const pledgeCount = document.getElementById('pledgeCount');
+    // pledgeCounter++;
+    let pledgeBtnValue =  parseInt(e.target.dataset.value)
+    let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
+    pledgeCount.innerText = pledgeCountValue;
+    console.log(pledgeCountValue);
+}
+
+pledgeBtns.forEach(pledge => {
+    pledge.addEventListener('click', updatePledgeTotal)
+})
 
 window.addEventListener('click', selectPledgeAmount, false)
