@@ -8,6 +8,9 @@ console.log(pledgeBtns);
 let pledgeTotal = 0;
 let backersCount = 345;
 let pledgeCounter = parseInt(0);
+let pledgeCountValue = Number(localStorage.getItem('pledgeValue'));
+pledgeCount.innerText = `${pledgeCountValue} of`;
+
 
 
 const updatePledgeTotal = (e) => {
@@ -24,13 +27,17 @@ const updatePledgeTotal = (e) => {
     const pledgeCount = document.getElementById('pledgeCount');
     let pledgeBtnValue =  parseInt(e.target.dataset.value)
     let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
-    pledgeCount.innerText = pledgeCountValue;
+    pledgeCount.innerText = `${pledgeCountValue} of`;
+    localStorage.setItem("pledgeValue", pledgeCountValue);
     console.log(pledgeCountValue);
     if(pledgeCountValue >= 500) {
         btnContainer.classList.add('disabled');
         goalContainer.classList.add('complete');
     }
 }
+
+// const setLocalStorage = () => {
+// }
 
 
 pledgeBtns.forEach(pledge => {
