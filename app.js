@@ -5,6 +5,9 @@ const goalContainer = document.querySelector('.goal-container');
 const pledgeBtns = document.querySelectorAll('.btn-container .pledge-btn');
 console.log(pledgeBtns);
 
+let newWidth = Number(localStorage.getItem('newWidthStored'))
+progressFill.style.width = newWidth + "px";   
+
 let pledgeTotal = 0;
 let backersCount = 345;
 let pledgeCounter = parseInt(0);
@@ -20,6 +23,7 @@ const updatePledgeTotal = (e) => {
     progressFill.style.width = parseInt(pledgeTotal);
     let newWidth = pledgeTotal += pledgeValue;
     progressFill.style.width = newWidth + "px";   
+    localStorage.setItem('newWidthStored', newWidth)
     //-------------pledge count & backer count -----------------------
     let backersCountDisplay = document.getElementById('backersCount');
     backersCount++;
