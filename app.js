@@ -3,8 +3,6 @@ const btnContainer = document.querySelector('.btn-container');
 const body = document.querySelector('body');
 const goalContainer = document.querySelector('.goal-container');
 const pledgeBtns = document.querySelectorAll('.btn-container .pledge-btn');
-console.log(pledgeBtns);
-
 let newWidth = Number(localStorage.getItem('newWidthStored'))
 progressFill.style.width = newWidth + "px";   
 
@@ -17,6 +15,10 @@ pledgeCount.innerText = `${pledgeCountValue} of`;
 
 
 const updatePledgeTotal = (e) => {
+    console.log(e.target.nextSibling.nextSibling);
+    // const customPledgeForm = document.querySelectorAll('.custom-pledge-form');
+    e.target.nextSibling.nextSibling.classList.toggle('active');
+    // customPledgeForm.classList.toggle('active');
     // ---------------------progress bar 
     const progressFill = document.getElementById('progress-fill');
     let pledgeValue = parseInt(e.target.dataset.value);
