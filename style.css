@@ -80,7 +80,7 @@ button:focus {
 }
 
 .btn-container {
-  display: inline-block;
+  display: flex;
 }
 
 .custom-pledge-form {
