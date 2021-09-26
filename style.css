@@ -104,6 +104,10 @@ button:focus {
   margin: 2rem;
 }
 
+.selected {
+  display: flex;
+}
+
 .option-card {
   display: flex;
   align-items: center;
@@ -132,7 +136,12 @@ button:focus {
   transition: ease 0.2s;
 }
 
-.option-btn:hover {
+.option-btn.active {
+  background: mediumslateblue;
+  color: #444;
+}
+
+/* .option-btn:hover {
   border: 3px solid rgb(69, 40, 233);
   background: rgb(240, 240, 240);
-}
+} */
